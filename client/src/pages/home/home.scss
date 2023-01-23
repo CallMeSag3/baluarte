@@ -1,0 +1,9 @@
+.home {
+    display: flex;
+}
+
+@media (max-width: 644px) {
+    .home {
+        display: block;
+    }
+}

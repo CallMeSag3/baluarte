@@ -1,0 +1,196 @@
+.preview {
+    width: 100%;
+    height: 150px;
+    margin: 90px auto;
+    &__list{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        &-item {
+            flex: 4;
+            max-width: 520px;
+            margin: 0 auto;
+            padding-left: 50px;
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+        &-img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            filter: invert(25%) sepia(96%) saturate(339%) hue-rotate(165deg) brightness(93%) contrast(96%);
+        }
+        &-title {
+            font-size: 30px;
+            line-height: 25px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        &-text {
+            font-size: inherit;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    .preview {
+        margin: 70px auto;
+        &__list {
+            &-item {
+                padding-left: 30px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 50px;
+                height: 50px;
+            }
+            &-title {
+                font-size: 25px;
+            }
+        }
+    }
+}
+@media (max-width:730px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 22px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 40px;
+                height: 40px;
+            }
+            &-title {
+                font-size: 22px;
+            }
+            &-text {
+                line-height: 17px;
+            }
+        }
+    }
+}
+@media (max-width:700px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 22px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 40px;
+                height: 40px;
+            }
+            &-title {
+                margin: 15px 0;
+                font-size: 20px;
+            }
+            &-text {
+                line-height: 17px;
+            }
+        }
+    }
+}
+@media (max-width:590px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 20px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 40px;
+                height: 40px;
+            }
+            &-title {
+                margin: 15px 0;
+                font-size: 18px;
+            }
+            &-text {
+                line-height: 17px;
+            }
+        }
+    }
+}
+@media (max-width:535px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 20px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 40px;
+                height: 40px;
+            }
+            &-title {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+            &-text {
+                line-height: 17px;
+            }
+        }
+    }
+}
+@media (max-width:535px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 17px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 40px;
+                height: 40px;
+            }
+            &-title {
+                margin: 15px 0;
+                font-size: 15px;
+            }
+            &-text {
+                line-height: 17px;
+            }
+        }
+    }
+}
+@media (max-width:458px) {
+    .preview {
+        &__list {
+            &-item {
+                padding-left: 16px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+            &-img {
+                width: 35px;
+                height: 35px;
+            }
+            &-title {
+                line-break:loose;
+                margin: 15px 0;
+                font-size: 13px;
+            }
+            &-text {
+                line-height: 16px;
+                font-size: 13px;
+            }
+        }
+    }
+}
