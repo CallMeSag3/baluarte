@@ -1,6 +1,4 @@
 import './singlePost.scss'
-import OtherPicOne from '../../images/other.jpg'
-import OtherPicTwo from '../../images/person.jpeg'
 import User from '../../images/user-regular.svg'
 import React from 'react'
 import { useLocation } from 'react-router-dom'

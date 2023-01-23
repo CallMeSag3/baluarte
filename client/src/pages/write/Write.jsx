@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect } from 'react'
 import './write.scss'
 import FileAdd from '../../images/file_add.svg'
 import Footer from '../../components/footer/Footer'

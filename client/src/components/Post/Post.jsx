@@ -8,7 +8,7 @@ export default function Post({post}) {
   return (
     <div className="post">
       {post.photo && (
-        <img src={PF + post.photo} alt="Picture" className="post__img" />
+        <img src={PF + post.photo} alt="postPhoto" className="post__img" />
       )}
       <div className="post__info">
         <div className="post__categories">
