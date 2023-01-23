@@ -111,8 +111,7 @@
     "xtend": "^4.0.2"
   },
   "scripts": {
-    "start": "nodemon index.js",
-    "build": "react-scripts build"
+    "start": "nodemon index.js"
   },
   "author": "sage",
   "license": "ISC",
