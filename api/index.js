@@ -43,6 +43,10 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/comment", commentRoute);
 
-app.listen("8000", () => {
-  console.log("Backend running..");
-});
+if (process.env.API_PORT) {
+  app.listen(process.env.API_PORT, () => {
+    console.log("Backend running..");
+  });
+}
+
+module.exports = app;
