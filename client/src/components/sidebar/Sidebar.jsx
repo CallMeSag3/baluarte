@@ -1,6 +1,5 @@
 import React from 'react'
 import "./sidebar.scss"
-import Creator from '../../images/phoenix.jpeg'
 import Facebook from '../../images/facebook.svg'
 import Twitter from '../../images/twitter.svg'
 import Telegram from '../../images/telegram.svg'
@@ -23,15 +22,6 @@ export default function Sidebar() {
   return (
     <div className='sidebar'>
       <div className="sidebar__container">
-        <div className="sidebar__item">
-          <h2 className="sidebar__title">
-            SOBRE MI
-          </h2>
-          <img src={Creator} alt="Creator" className="sidebar__image" />
-          <p className="sidebar__about">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat omnis illo facere porro, optio saepe ipsa voluptas ad nobis! Nemo omnis reprehenderit perspiciatis necessitatibus perferendis fugit magnam ullam aperiam ducimus.
-          </p>
-        </div>
         <div className="sidebar__item">
           <h2 className="sidebar__title">CATEGORIAS</h2>
           <ul className="sidebar__list">

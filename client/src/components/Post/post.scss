@@ -1,5 +1,5 @@
 .post {
-    width: 345px;
+    width: 335px;
     margin: 0 25px 40px 25px;
     transition: all 0.7s ease;
     &:hover {
@@ -56,6 +56,13 @@
     }
 }
 
+@media (max-width: 1143px) {
+    .post {
+        width: 315px;
+        margin: 0 25px 40px 25px;
+
+    }
+}
 @media (max-width: 1090px) {
     .post {
         width: 300px;
@@ -63,10 +70,10 @@
 
     }
 }
-@media (max-width: 986px) {
+@media (max-width: 1075px) {
     .post {
-        width: 270px;
-        margin: 0 25px 40px 25px;
+        width: 43%;
+        margin: 0 18px 40px 18px;
 
     }
 }
