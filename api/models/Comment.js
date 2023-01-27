@@ -9,6 +9,11 @@ const CommentSchema = new mongoose.Schema(
       required: true,
       unique: false,
     },
+    userId: {
+      type: String,
+      required: true,
+      unique: false,
+    },
     desc: {
       type: String,
       required: true,

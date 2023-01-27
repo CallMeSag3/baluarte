@@ -233,6 +233,16 @@
     }
 }
 
+@media (max-width:520px) {
+    .footer {
+        height: 310px;
+        &__first {
+            &-title {
+                margin-top: 20px;
+            }
+        }
+    }
+}
 @media (max-width:480px) {
     .footer {
         &__first {

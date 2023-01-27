@@ -7,6 +7,9 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useContext } from 'react'
 import {Context} from '../../context/Context'
+import swal from 'sweetalert'
+import Person from '../../images/icooon.jpeg'
+
 
 
 // edit only for admins
@@ -19,6 +22,7 @@ export default function SinglePost() {
     const [desc, setDesc] = useState("")
     const [updateMode, setUpdateMode] = useState(false)
     const [file, setFile] = useState(null)
+    const [commentText, setCommentText] = useState("")
 
     const {user} = useContext(Context)
 
@@ -33,6 +37,38 @@ export default function SinglePost() {
     }, [path]) // change on path edit
 
     let options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+
+    const handleComment = async (e) => {
+        var d = new Date(),
+        dformat = [
+               d.getDate(),
+               d.getMonth()+1,
+               d.getFullYear()].join('/')+' '+
+              [d.getHours(),
+               d.getMinutes(),
+               d.getSeconds()].join(':');
+
+        e.preventDefault()
+        const comment = {
+            username: user.username,
+            userId: user._id,
+            body: commentText,
+            userPic: user.profilePic,
+            date: dformat,
+        }
+        console.log(comment.date)
+        try {
+            await axios.put("/posts/" + path, {comment})
+            swal({
+                title: "Comentario agregado!",
+                icon: "success",
+                button: "OK",
+
+            }).then(()=>window.location.reload())
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     const handleDelete = async () => {
         try {
@@ -109,48 +145,45 @@ export default function SinglePost() {
                 </p>
             ) }
             {updateMode && <button className="editmode__button" onClick={handleUpdate}>Actualizar</button>}
-            {/* <div className="single-post__comments">
+            <div className="single-post__comments">
                 <h2 className="single-post__comments__title">
                     Escriba su opinion!
                 </h2>
-                <div className="single-post__comments__write">
-                    <input className="single-post__comments__input" type="text" placeholder="Comentario"/>
-                    <button className="single-post__comments__btn" type="submit">Mandar</button>
-                </div>
+                {user && (
+                    <div className="single-post__comments__write">
+                        <form action="post" className="single-post__comments__form" onSubmit={handleComment}>
+                            <input className="single-post__comments__input" type="text" onChange={e=>setCommentText(e.target.value)} required={true} placeholder="Comentario"/>
+                            <button className="single-post__comments__btn" type="submit">Mandar</button>
+                        </form>
+                    </div>
+                )}
                 <div className="single-post__comments__other">
                     <h2 className="single-post__comments__title">
                         Comentarios:
                     </h2>
-                    <div className="single-post__comments__comment">
-                        <img src={OtherPicOne} alt="Usuario" className="single-post__comments__profile" />
-                        <div className="single-post__comments__content">
-                            <h2 className="single-post__comments__name">
-                                <b>Usuario Uno</b>
-                            </h2>
-                            <span className="single-post__comments__date">
-                                20 minutos atras
-                            </span>
-                            <p className="single-post__comments__text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nisi atque numquam necessitatibus nostrum recusandae cumque neque beatae repellendus officiis? Provident excepturi pariatur dignissimos laborum, ea ipsa necessitatibus consectetur accusamus.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="single-post__comments__comment">
-                        <img src={OtherPicTwo} alt="Usuario" className="single-post__comments__profile" />
-                        <div className="single-post__comments__content">
-                            <h2 className="single-post__comments__name">
-                                <b>Usuario Dos</b>
-                            </h2>
-                            <span className="single-post__comments__date">
-                                46 minutos atras
-                            </span>
-                            <p className="single-post__comments__text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nisi atque numquam necessitatibus nostrum recusandae cumque neque beatae repellendus officiis? Provident excepturi pariatur dignissimos.
-                            </p>
-                        </div>
-                    </div>
+                    {typeof post.comments !== 'undefined' && post.comments.length > 0 ? (
+                        post.comments.reverse().map(comment => (
+                                <div key={comment.username + comment.userId + comment.body} className="single-post__comments__comment">
+                                    {comment.userPic ?  <img src={PF + comment.userPic} alt="Usuario" className="single-post__comments__profile" /> : <img src={Person} alt="Usuario" className="single-post__comments__profile" />}
+
+                                    <div className="single-post__comments__content">
+                                        <h2 className="single-post__comments__name">
+                                            <b>{comment.username}</b>
+                                        </h2>
+                                        <h2 className="single-post__comments__date">
+                                            {comment.date}
+                                        </h2>
+                                        <p className="single-post__comments__text">
+                                            {comment.body}
+                                        </p>
+                                    </div>
+                                </div>
+                        ))
+                    ) : (<h2 className="single-post__comments__nocom" style={{fontSize:20, marginTop:"50px", color:"#666"}}>
+                    No hay comentarios!
+                </h2>)}
                 </div>
-            </div> */}
+            </div>
         </div>
     </div>
   )
