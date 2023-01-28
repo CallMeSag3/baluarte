@@ -1,6 +1,6 @@
 import React from 'react'
 import './aboutPage.scss'
-import Mate from '../../images/mate.png'
+import Mate from '../../images/matee.png'
 import Mountain from '../../images/mountain.jpg'
 import ProgressBar from './ProgressBar'
 import Post from '../Post/Post'
@@ -9,10 +9,13 @@ import { useEffect } from 'react'
 
 export default function AboutPage({posts}) {
   const testData = [
-    { bgcolor: "#2DCDDF", completed: 80 },
-    { bgcolor: "#ffffff", completed: 50 },
-    { bgcolor: "#ffffff", completed: 75 },
-    { bgcolor: "#2DCDDF", completed: 30 },
+    { bgcolor: "#2DCDDF", completed: 100 },
+    { bgcolor: "#ffffff", completed: 100 },
+    { bgcolor: "#2DCDDF", completed: 100 },
+    { bgcolor: "#ffffff", completed: 100 },
+    { bgcolor: "#2DCDDF", completed: 100 },
+    { bgcolor: "#ffffff", completed: 100 },
+    { bgcolor: "#2DCDDF", completed: 100 },
   ]
 
   const [state, setState] = useState()
@@ -20,7 +23,7 @@ export default function AboutPage({posts}) {
     window.addEventListener("scroll", () => {
       let px = window.pageYOffset
       console.log(px)
-      px > 1400 && px < 1500 ? setState(true) : setState(false)
+      px > 1370 && px < 1500 ? setState(true) : setState(false)
     })
   })
 
@@ -32,14 +35,11 @@ export default function AboutPage({posts}) {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, eveniet?
           </h2>
           <p className="aboutpage__top-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut dolore vero animi, distinctio, saepe dolor quidem accusantium quia cum vel, iusto doloribus excepturi maxime voluptatum qui sunt exercitationem odio!
+            El nosotros es un espacio para el debate y la reflexión donde la focalización en la realidad,  determinación en la búsqueda y cambio de conciencia cultural y colectiva son el eje de una propuesta que quiere ser diferente, pero no con ello renegar del pasado y del legado de quienes nos han antecedido y puesto los cimientos de este proyecto de ser y constituir una nación libre, soberana y justa.
           </p>
           <p className="aboutpage__top-text">
-              Voluptatum, alias itaque? Minus maxime dolore amet fuga nisi esse necessitatibus praesentium repellat officiis incidunt maiores tempore quod deleniti commodi eum sequi aperiam, quae recusandae tempora ratione totam? Architecto, quaerat.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi obcaecati vel optio et error itaque voluptatem soluta natus, expedita, nostrum architecto voluptas illo assumenda tenetur tempore deserunt voluptates neque quae?
-              Lorem, ipsum.
-              <br/>
-              Debitis totam animi et, eaque, aperiam tempore iure incidunt impedit fugiat, assumenda ratione ipsa cupiditate repellendus. Harum soluta unde distinctio dignissimos, illo consectetur aliquid sunt id vitae adipisci voluptate molestias.
+             SEA ESTE UN ÁMBITO DONDE LA LLAMADA A LA REFLEXIÓN Y AL CAMBIO SEA PERMANENTE, UNA DINÁMICA DONDE NOS SENTIREMOS REALIZADOS CUANDO HAYAMOS CONSEGUIDO LOS CONSENSOS BÁSICOS SOBRE QUE SOMOS Y NUESTRA PROYECCIÓN FUTURA, SEA ELLO DESDE LOS PRINCIPIOS PRE-POLÍTICOS, LOS POSTULADOS POLÍTICOS,
+              LAS MEDIDAS ECONÓMICAS Y LAS POLÍTICAS SOCIALES QUE VAYAMOS A DISEÑAR, EN UN CONTEXTO DE RELACIONAMIENTO INTERNACIONAL CREATIVO.
           </p>
         </div>
         <div className="aboutpage__split">
@@ -50,15 +50,14 @@ export default function AboutPage({posts}) {
             Nuestra inspiracion en detalles
           </h2>
           <p className="aboutpage__diagram-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga optio ab repudiandae temporibus ea ipsa consequuntur, voluptas, odio, ut sapiente a possimus nisi. Fugiat necessitatibus temporibus alias suscipit possimus eligendi.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum veritatis labore libero sit impedit deleniti, aperiam dicta vitae, voluptatum ratione soluta explicabo cumque quis, ad fugiat tempora iure. Quae, quasi!
+          Este sitio tiene un doble fin. En primer lugar, sistematizar trabajos elaborados en los últimos años hasta llegar a la actualidad, al mismo tiempo que desentrañar con quienes se sumen ideas que sirvan al pensamiento y acción política argentinos con proyección en el espacio de pertenencia civilizacional sudamericano en torno a los siguiente ejes:
           </p>
           <div className="aboutpage__diagram-container">
             <img src={Mate} alt="Mate" className="aboutpage__diagram-img" />
             <ul className="aboutpage__diagram-container-table">
               <li className="aboutpage__diagram-container-item">
                 <div className="aboutpage__diagram-container-item-content">
-                  <p className="aboutpage__diagram-container-item-name">Lorem, ipsum.</p>
+                  <p className="aboutpage__diagram-container-item-name">El proyecto político</p>
                 </div>
 
                 <ProgressBar bgcolor={testData[0].bgcolor} completed={testData[0].completed} state={state} />
@@ -66,7 +65,7 @@ export default function AboutPage({posts}) {
               </li>
               <li className="aboutpage__diagram-container-item">
                 <div className="aboutpage__diagram-container-item-content">
-                  <p className="aboutpage__diagram-container-item-name">Lorem, ipsum. Lorem, ipsum dolor.</p>
+                  <p className="aboutpage__diagram-container-item-name">El plan de organización socio-económica</p>
                 </div>
 
                 <ProgressBar bgcolor={testData[1].bgcolor} completed={testData[1].completed} state={state} />
@@ -74,17 +73,41 @@ export default function AboutPage({posts}) {
               </li>
               <li className="aboutpage__diagram-container-item">
                 <div className="aboutpage__diagram-container-item-content">
-                  <p className="aboutpage__diagram-container-item-name">Lorem, ipsum.</p>
+                  <p className="aboutpage__diagram-container-item-name">Los organismos de ejecución</p>
                 </div>
 
                 <ProgressBar bgcolor={testData[2].bgcolor} completed={testData[2].completed} state={state} />
               </li>
               <li className="aboutpage__diagram-container-item">
                 <div className="aboutpage__diagram-container-item-content">
-                  <p className="aboutpage__diagram-container-item-name">Lorem, ipsum.</p>
+                  <p className="aboutpage__diagram-container-item-name">Los organismos de control</p>
                 </div>
 
                 <ProgressBar bgcolor={testData[3].bgcolor} completed={testData[3].completed} state={state} />
+              </li>
+
+              <li className="aboutpage__diagram-container-item">
+                <div className="aboutpage__diagram-container-item-content">
+                  <p className="aboutpage__diagram-container-item-name">Los espacios para el debate filosófico-cultural, político y político-económico-social</p>
+                </div>
+
+                <ProgressBar bgcolor={testData[4].bgcolor} completed={testData[4].completed} state={state} />
+              </li>
+
+              <li className="aboutpage__diagram-container-item">
+                <div className="aboutpage__diagram-container-item-content">
+                  <p className="aboutpage__diagram-container-item-name">La interacción con la comunidad internacional. Estrategia, táctica y acciones</p>
+                </div>
+
+                <ProgressBar bgcolor={testData[5].bgcolor} completed={testData[5].completed} state={state} />
+              </li>
+
+              <li className="aboutpage__diagram-container-item">
+                <div className="aboutpage__diagram-container-item-content">
+                  <p className="aboutpage__diagram-container-item-name">Los medios de comunicación social, la digitalización, la vinculación generacional y laboral, la cultura hacia el futuro que ya es</p>
+                </div>
+
+                <ProgressBar bgcolor={testData[6].bgcolor} completed={testData[6].completed} state={state} />
               </li>
             </ul>
           </div>

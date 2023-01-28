@@ -61,7 +61,7 @@ export default function TopBar()
                 navElement.style.transform = "translateY(0)"
                 menuMobile.style.transform = "translateY(0px)"
                 navElement.style.transition = "all 0.5s"
-                menuMobile.style.top = "31.3%"
+                menuMobile.style.top = "30%"
         }
     })
     return (

@@ -2,7 +2,7 @@
     margin-top: 50px;
     background-color: #2E6A9F;
     width: 100%;
-    height: 220px;
+    height: 240px;
     position: relative;
     &__sections {
         display: grid;
@@ -182,7 +182,7 @@
 }
 @media (max-width:600px) {
     .footer {
-        height: 290px;
+        height: 350px;
         &__sections {
             display: grid;
             width: 100%;
@@ -235,7 +235,7 @@
 
 @media (max-width:520px) {
     .footer {
-        height: 310px;
+        height: 350px;
         &__first {
             &-title {
                 margin-top: 20px;
@@ -245,6 +245,16 @@
 }
 @media (max-width:480px) {
     .footer {
+        &__first {
+            &-form {
+                margin-left: 7%;
+            }
+        }
+    }
+}
+@media (max-width:465px) {
+    .footer {
+        height: 385px;
         &__first {
             &-form {
                 margin-left: 7%;

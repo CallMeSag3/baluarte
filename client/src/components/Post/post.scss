@@ -77,17 +77,32 @@
 
     }
 }
+@media (max-width: 1048px) {
+    .post {
+        width: 46%;
+        margin: 0 18px 40px 18px;
+
+    }
+}
 
 @media (max-width: 928px) {
     .post {
-        width: 360px;
+        width: 47%;
+        margin: 0 10px 40px 10px;
+
+    }
+}
+@media (max-width: 780px) {
+    .post {
+        width: 345px;
         margin: 0 auto 40px auto;
 
     }
 }
-@media (max-width: 863px) {
+
+@media (max-width: 750px) {
     .post {
-        width: 345px;
+        width: 100%;
         margin: 0 auto 40px auto;
 
     }

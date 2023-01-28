@@ -54,7 +54,7 @@
             position: absolute;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 360px;
+            height: 620px;
             z-index: -5;
         }
         &-title {
@@ -79,11 +79,13 @@
         }
         &-text {
             margin: 0 30px;
+            margin-bottom: 30px;
         }
         &-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 620px;
             &:hover {
                 .aboutpage__diagram-container-item-line {
                     animation-play-state: running;
@@ -91,7 +93,6 @@
             }
             &-table {
                 flex: 8;
-                margin-top: 50px;
                 max-width: 60%;
             }
             &-item {

@@ -64,8 +64,9 @@ export default function ContactBody() {
             </li>
           </ul>
           <p className="contactBody__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum expedita voluptatum voluptas dolore soluta odio. Cum, consequuntur aut. Sapiente possimus, illum libero repudiandae pariatur quas doloremque corrupti aliquid soluta?
-            Commodi ipsa quas dicta suscipit mollitia molestias quis natus sapiente facere, praesentium soluta iusto aspernatur adipisci eius aliquid voluptatem dolorem fuga quo, vel est. Vel iure tempore doloremque molestiae placeat!
+          El tiempo es la eternidad que se nos da en cada grano de arena, nuestro sentido es palpitar el ser con cada instante que se nos ha dado frente a un que hacer personal, social y nacional.
+          <br/>
+          Vení unite!
           </p>
           <a href="mailto:pgn2233@gmail.com" className="contactBody__email">
               pgn2233@gmail.com

@@ -39,8 +39,7 @@ export default function Footer() {
                     <div className="footer__first">
                         <h2 className="footer__first-title">Contactenos</h2>
                         <p className="footer__first-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, earum.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, earum.
+                        El tiempo es la eternidad que se nos da en cada grano de arena, nuestro sentido es palpitar el ser con cada instante que se nos ha dado frente a un que hacer personal, social y nacional.
                         </p>
                         <a href="mailto:pgn2233@gmail.com" className="footer__first-email">
                             pgn2233@gmail.com
