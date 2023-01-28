@@ -1,5 +1,5 @@
 import './footer.scss'
-import Twitter from '../../images/twitter.svg'
+import Twitter from '../../images/bastyon.png'
 import Telegram from '../../images/telegram.svg'
 import Facebook from '../../images/facebook.svg'
 import React from 'react'
@@ -63,9 +63,9 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className="footer__links-item">
-                                <a href="https://twitter.com" target="_blank" rel="noreferrer" className="footer__links-link">
-                                    <img src={Twitter} alt="RedSoc" className="footer__links-image" />
-                                    <p className="footer__links-name">Twitter</p>
+                                <a href="https://bastyon.com/cherapal?ref=PAxzKqPG5tLDgqhACDJzNVfSFczquni3Po" target="_blank" rel="noreferrer" className="footer__links-link">
+                                    <img src={Twitter} alt="RedSoc" className="footer__links-image-bas" />
+                                    <p className="footer__links-name">Bastyon</p>
                                 </a>
                             </li>
                             <li className="footer__links-item">

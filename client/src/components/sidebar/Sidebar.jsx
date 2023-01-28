@@ -1,7 +1,7 @@
 import React from 'react'
 import "./sidebar.scss"
 import Facebook from '../../images/facebook.svg'
-import Twitter from '../../images/twitter.svg'
+import Twitter from '../../images/bastyon.png'
 import Telegram from '../../images/telegram.svg'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -38,8 +38,8 @@ export default function Sidebar() {
             <a href="https://www.facebook.com" target="_blank" rel="noreferrer" className="sidebar__social-link">
               <img src={Facebook} alt="Facebook" className="sidebar__social-image" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="sidebar__social-link">
-              <img src={Twitter} alt="Twitter" className="sidebar__social-image" />
+            <a href="https://bastyon.com/cherapal?ref=PAxzKqPG5tLDgqhACDJzNVfSFczquni3Po" target="_blank" rel="noreferrer" className="sidebar__social-link">
+              <img src={Twitter} alt="Bastyon" className="sidebar__social-image-bas" />
             </a>
             <a href="https://t.me/gaucho_argentino" target="_blank" rel="noreferrer" className="sidebar__social-link">
               <img src={Telegram} alt="Telegram" className="sidebar__social-image" />

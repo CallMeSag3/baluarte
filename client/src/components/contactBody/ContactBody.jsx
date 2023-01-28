@@ -1,7 +1,7 @@
 import React from 'react'
 import './contactBody.scss'
 import Argentina from '../../images/arg.jpeg'
-import Twitter from '../../images/twitter.svg'
+import Twitter from '../../images/bastyon.png'
 import Telegram from '../../images/telegram.svg'
 import Facebook from '../../images/facebook.svg'
 import swal from 'sweetalert'
@@ -53,7 +53,7 @@ export default function ContactBody() {
               </a>
             </li>
             <li className="contactBody__item">
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="contactBody__item-link">
+              <a href="https://bastyon.com/cherapal?ref=PAxzKqPG5tLDgqhACDJzNVfSFczquni3Po" target="_blank" rel="noreferrer" className="contactBody__item-link">
                 <img src={Twitter} alt="logo" className="contactBody__item-img" />
               </a>
             </li>

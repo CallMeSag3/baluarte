@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Facebook from '../../images/facebook.svg'
-import Twitter from '../../images/twitter.svg'
+import Twitter from '../../images/bastyon.png'
 import Telegram from '../../images/telegram.svg'
 import {Link} from 'react-router-dom'
 
@@ -35,8 +35,8 @@ export default function SidebarSim() {
                 <a href="https://www.facebook.com" target="_blank" rel="noreferrer" className="sidebar__social-link">
                   <img src={Facebook} alt="Facebook" className="sidebar__social-image" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer" className="sidebar__social-link">
-                  <img src={Twitter} alt="Twitter" className="sidebar__social-image" />
+                <a href="https://bastyon.com/cherapal?ref=PAxzKqPG5tLDgqhACDJzNVfSFczquni3Po" target="_blank" rel="noreferrer" className="sidebar__social-link">
+                  <img src={Twitter} alt="Bastyon" className="sidebar__social-image-bas" />
                 </a>
                 <a href="https://t.me/gaucho_argentino" rel="noreferrer" target="_blank" className="sidebar__social-link">
                   <img src={Telegram} alt="Telegram" className="sidebar__social-image" />
