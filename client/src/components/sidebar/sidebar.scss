@@ -1,0 +1,112 @@
+.sidebar {
+    flex: 3;
+    padding-bottom: 30px;
+    background-color: #fdfbfb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        margin: 10px;
+        padding: 5px;
+        width: 80%;
+        border-top: 1px solid #a7a4a4;
+        border-bottom: 1px solid #a7a4a4;
+        font-size: 14px;
+        color: #222;
+        line-height: 20px;
+        text-align: center;
+    }
+    &__image {
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+    & p {
+        padding: 30px;
+    }
+    &__list {
+        margin-bottom: 30px;
+        &-item {
+            padding: 0 5px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            color:#222;
+            &:hover {
+                color: #a7a4a4;
+            }
+        }
+    }
+    &__social {
+        margin-top: 15px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        &-image {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            &-bas {
+                width: 30px;
+                height: 30px;
+                margin-left: 15px;
+                transition: all 0.3s ease;
+                filter: invert(0%) sepia(97%) saturate(0%) hue-rotate(125deg) brightness(0%) contrast(100%);
+                &:hover {
+                    filter: invert(55%) sepia(96%) saturate(339%) hue-rotate(165deg) brightness(96%) contrast(96%);
+                }
+            }
+            &:hover {
+                filter: invert(55%) sepia(96%) saturate(339%) hue-rotate(165deg) brightness(93%) contrast(96%);
+            }
+        }
+    }
+}
+
+@media (max-width: 1045px) {
+    .sidebar {
+        margin-right: 20px;
+        &__image {
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 928px) {
+    .sidebar {
+        margin-right: 15px;
+        &__image {
+            height: 300px;
+        }
+    }
+}
+@media (max-width: 753px) {
+    .sidebar {
+        margin-right: 10px;
+    }
+}
+@media (max-width: 684px) {
+    .sidebar {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 644px) {
+    .sidebar {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+}
