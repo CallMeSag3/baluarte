@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
   const [cats, setCats] = useState([])
-
+   const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get('/categories')
+      const res = await axiosInstance.get('/categories')
       setCats(res.data)
     }
     getCats()

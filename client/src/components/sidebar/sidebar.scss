@@ -1,7 +1,7 @@
 .sidebar {
     flex: 3;
     padding-bottom: 30px;
-    background-color: #fdfbfb;
+    background-color: #E3F2FF;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,8 @@
         width: 80%;
         border-top: 1px solid #a7a4a4;
         border-bottom: 1px solid #a7a4a4;
-        font-size: 14px;
-        color: #222;
+        font-size: 20px;
+        color: #000;
         line-height: 20px;
         text-align: center;
     }
@@ -36,7 +36,9 @@
             padding: 0 5px;
             display: inline-block;
             width: 100%;
+	    font-size: 16px;
             text-align: center;
+	   
             margin-top: 10px;
             cursor: pointer;
             white-space: nowrap;
@@ -101,12 +103,10 @@
 @media (max-width: 684px) {
     .sidebar {
         margin-right: 0;
-        margin-left: 20px;
     }
 }
 @media (max-width: 644px) {
     .sidebar {
         margin-right: 0;
-        margin-left: 10px;
     }
 }

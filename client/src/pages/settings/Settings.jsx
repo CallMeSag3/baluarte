@@ -17,9 +17,9 @@ export default function Settings() {
     const [email, setEmail] = useState(user.email)
     const [password, setPassword] = useState("")
     const [remove, setRemove] = useState(false)
-    const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+    const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
 
-    const PF = 'http://localhost:8000/images/'
+    const PF = 'https://api.baluartear.com/images/'
 
     const  handleSubmit = async (e) => {
         e.preventDefault()

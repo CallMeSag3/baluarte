@@ -39,10 +39,10 @@ export default function Footer() {
                     <div className="footer__first">
                         <h2 className="footer__first-title">Contactenos</h2>
                         <p className="footer__first-text">
-                        El tiempo es la eternidad que se nos da en cada grano de arena, nuestro sentido es palpitar el ser con cada instante que se nos ha dado frente a un que hacer personal, social y nacional.
+                         Estamos abiertos a sugerencias, propuestas o simplemente manifestaciones de voluntad de contribuir al descubrimiento y  construcción del nosotros como reflejo de aspiraciones individuales y colectivas.
                         </p>
-                        <a href="mailto:pgn2233@gmail.com" className="footer__first-email">
-                            pgn2233@gmail.com
+                        <a href="https://t.me/gaucho_argentino" className="footer__first-email">
+                            @Falconar22
                         </a>
                         {user && (
                             <form action="post" ref={form} onSubmit={sendEmail} className="footer__first-form">
@@ -54,7 +54,7 @@ export default function Footer() {
                         )}
                     </div>
                     <div className="footer__links">
-                        <h2 className="footer__links-title">Subscribete</h2>
+                        <h2 className="footer__links-title">Siguenos</h2>
                         <ul className="footer__links-list">
                             <li className="footer__links-item">
                                 <a href="https://at.tumblr.com/votontam/j2z0bk4tex9q" target="_blank" rel="noreferrer" className="footer__links-link">

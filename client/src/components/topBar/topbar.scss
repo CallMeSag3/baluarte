@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 2000;
     width: 100%;
     transition: position var(--speed);
     &__list {
@@ -70,6 +70,7 @@
         margin-right: 60px;
         display: flex;
         align-items: center;
+	z-index:1000;
         &-image {
             cursor: pointer;
             width: 25px;
@@ -87,6 +88,7 @@
         }
         &-cont {
             position: relative;
+	    z-index: 200;
         }
         &-searchitems {
             position: absolute;
@@ -94,8 +96,8 @@
             border-radius: 10px;
             left: 0;
             background-color: #fff;
-            width: 100%;
-            z-index: 1000;
+            width: 135%;
+            z-index: 2000;
             background-color:#2E6A9F;
         }
         &-searchitem {
@@ -103,11 +105,13 @@
             margin-left: 10px;
             padding-left: 10px;
             margin-right: 10px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             border-radius: 10px;
             cursor: pointer;
+	    z-index: 2000;
+	    border: 0.8px solid white;
             &:first-child {
-                margin-top: 5px;
+                margin-top: 10px;
             }
             &:hover {
                 background-color: #fff;
@@ -149,7 +153,7 @@
     position: relative;
     margin-left: 30px;
     display: none;
-    width: 40px;
+    width: 60px !important;
     cursor: pointer;
     appearance: none;
     background: none;
@@ -161,7 +165,7 @@
 .hamburger .bar, .hamburger::after, .hamburger::before {
     content: '';
     display: block;
-    width: 100%;
+    width: 30px !important;
     height: 3.5px;
     background-color: white;
     margin: 6px 0;
@@ -177,10 +181,14 @@
 }
 .hamburger.is-active::after {
     transform: rotate(45deg) translate(-9px, -0.5px);
+    width: 40px;
+    height: 3.5px;
 }
 
 .hamburger.is-active::before {
     transform: rotate(-45deg) translate(-13px, 4px);
+    width:40px;
+    height: 3.5px;
 }
 
 .menu__list-mobile {
@@ -275,6 +283,9 @@
         }
         &__right {
             margin-right: 30px;
+	    &-searchitems {
+		width: 117%;
+	    }
         }
     }
 }
@@ -386,6 +397,10 @@
             flex: 2;
             margin-left: 200px;
         }
+	&__logo {
+        height: 90px;
+        width: 140px;
+	}
     }
     .menu__list-mobile-ul {
         width: 50%;

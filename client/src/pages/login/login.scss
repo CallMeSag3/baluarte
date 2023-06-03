@@ -80,3 +80,10 @@
         max-width: 120px;
     }
 }
+
+@media (max-width: 463px) {
+    .login {
+        background-size: 100% calc(100vh - 205px);
+        background-position: center top;
+    }
+}

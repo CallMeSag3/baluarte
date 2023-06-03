@@ -24,6 +24,7 @@
             transform: translate(-50%, -50%);
             font-weight: bold;
             font-size: 70px;
+	    text-align: center;
             line-height: 80px;
             color: #fdfbfb;
         }
@@ -86,11 +87,11 @@
         padding-left: 25px;
         display: block;
         position: relative;
-        width: 15%;
+        width: 40%;
         &::before {
             content: "";
             position: absolute;
-            background: url('../../images/envelope.svg');
+            background: url('../../images/telegram.svg');
             top: 4.5px;
             left: 0;
             width: 19px;
@@ -135,6 +136,7 @@
                 padding: 5px 9px;
                 cursor: pointer;
                 transition: all 0.7s ease;
+		margin-bottom: 20px;
                 &:hover {
                     background-color: #2E6A9F;
                     color: #fdfbfb;
@@ -143,6 +145,7 @@
     }
 }
 
+       
 @media (max-width: 1170px) {
     .contactBody__header-title {
         width: 36%;
@@ -194,7 +197,8 @@
 }
 @media (max-width: 460px) {
     .contactBody__header-title {
-        width: 83%;
+        width: 100%;
+	font-size: 48px;
     }
 }
 @media (max-width: 572px) {
@@ -207,3 +211,4 @@
         margin-top: 20px;
     }
 }
+

@@ -8,7 +8,7 @@ export default function Register() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(false)
-  const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+  const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
 
   const handleSubmit = async (e) => {
     e.preventDefault() // no refresh

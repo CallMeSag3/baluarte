@@ -59,11 +59,8 @@ export default function Header () {
     return (
         <div className="header">
             <div className="header__titles">
-                    <span className="header__titles-text">
-                        Blog Personal
-                    </span>
                     <h2 className="header__titles-title">
-                        Union Cívica Argentina
+                        Baluarte Argentino
                     </h2>
 
                 </div>

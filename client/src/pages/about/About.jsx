@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer'
 
 export default function About() {
   const [posts, setPosts] = useState([]) // rendering posts from back
-  const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+  const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
 
   useEffect(() => {
     const fetchPosts = async () => {

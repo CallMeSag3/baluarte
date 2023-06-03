@@ -17,18 +17,18 @@ export default function SinglePost() {
     const location = useLocation()
     const path = location.pathname.split("/")[2]
     const [post, setPost] = useState({})
-    const PF = "http://localhost:8000/images/"
+    const PF = 'https://api.baluartear.com/images/'
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
     const [updateMode, setUpdateMode] = useState(false)
     const [file, setFile] = useState(null)
     const [commentText, setCommentText] = useState("")
-
+ const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
     const {user} = useContext(Context)
 
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get("/posts/" + path)
+            const res = await axiosInstance.get("/posts/" + path)
             setPost(res.data)
             setTitle(res.data.title)
             setDesc(res.data.desc)
@@ -58,7 +58,7 @@ export default function SinglePost() {
         }
         console.log(comment.date)
         try {
-            await axios.put("/posts/" + path, {comment})
+            await axiosInstance.put("/posts/" + path, {comment})
             swal({
                 title: "Comentario agregado!",
                 icon: "success",
@@ -72,7 +72,7 @@ export default function SinglePost() {
 
     const handleDelete = async () => {
         try {
-            await axios.delete("/posts/" + path, {data:{userId: user._id}})
+            await axiosInstance.delete("/posts/" + path, {data:{userId: user._id}})
             window.location.replace("/")
         } catch (err) {
             console.log(err)
@@ -92,11 +92,11 @@ export default function SinglePost() {
             data.append("file", file)
             updatedPost.photo = filename
             try {
-                await axios.post("/upload", data)
+                await axiosInstance.post("/upload", data)
             } catch (err) {}
         }
         try {
-            await axios.put("/posts/" + path, updatedPost)
+            await axiosInstance.put("/posts/" + path, updatedPost)
             setUpdateMode(false)
         } catch (err) {
             console.log(err)
@@ -112,7 +112,7 @@ export default function SinglePost() {
             {updateMode ? <input type="text" value={title} className="editmode__title-input" autoFocus onChange={(e)=>setTitle(e.target.value)}></input> : (
                 <div className="single-post__head">
                     <h1 className="single-post__title">{title}</h1>
-                    {user?.username === 'rafael__admin' &&(
+                    {user?.username === 'pfalconar' &&(
                     <div className='single-post__edits'>
                         <span className='single-post__edit' style={{color:"green", cursor:"pointer"}} onClick={()=>setUpdateMode(true)}>Editar</span>
                         <span className='single-post__edit' style={{color:"tomato", cursor:"pointer"}} onClick={handleDelete}>Eliminar</span>
@@ -132,7 +132,7 @@ export default function SinglePost() {
             )}
             <div className="single-post__info">
                 <span className="single-post__author">
-                    Autor: <b>Aguila Piñatelli</b>
+                    Autor: <b>RAPA</b>
                 </span>
 
                 <span className="single-post__date">

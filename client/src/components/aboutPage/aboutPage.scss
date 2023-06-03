@@ -314,3 +314,38 @@
 }
 
 
+@media(max-width: 400px) {
+    .aboutpage__top-title {
+        font-size: 16px;
+        line-height: 26px;
+        &::after {
+            width: 140px;
+        }
+    }
+    .aboutpage__diagram-title {
+        font-size: 16px;
+        line-height: 26px;
+        &::after {
+            width: 140px;
+        }
+    }
+    .aboutpage__top-text {
+        padding-left: 10%;
+    }
+    .aboutpage__diagram-img {
+        width: 150px;
+	height: 150px;
+}
+    .aboutpage__diagram::after {
+	height: 660px;
+}
+.aboutpage__diagram-container-item {
+    margin-bottom: 5px;
+}
+}
+
+@media (max-width: 375px) {
+  aboutpage__diagram-container-item:first-child  {
+	margin-top: 20px;
+}
+}

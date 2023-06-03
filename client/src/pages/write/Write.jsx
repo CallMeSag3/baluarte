@@ -12,7 +12,7 @@ export default function Write() {
     const [cats, setCats] = useState([])
     const [catPost, setCatPost] = useState([])
     const [file, setFile] = useState(null)
-    const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+    const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
 
 
     const handleCheck = (selectedOption) => {

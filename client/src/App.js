@@ -27,7 +27,7 @@ function App() {
         <Route
           path="/write"
           element={
-            user && user.username === "rafael__admin" ? <Write /> : <Home />
+            user && user.username === "pfalconar" ? <Write /> : <Home />
           }
         />
         <Route path="/login" element={user ? <Home /> : <Login />}></Route>
@@ -38,7 +38,7 @@ function App() {
           path="/settings"
           element={user ? <Settings /> : <Register />}
         ></Route>
-        <Route path="/post/:postId" element={<Single />}></Route>
+        <Route path="/posts/:id" element={<Single />}></Route>
       </Routes>
     </Router>
   );

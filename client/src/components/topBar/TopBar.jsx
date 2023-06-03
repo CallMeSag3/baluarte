@@ -17,10 +17,10 @@ export default function TopBar()
     const [posts, setPosts] = useState([])
     const [query, setQuery] = useState('')
     const menu = useRef()
-
+    const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
     useEffect(() => {
         const fetchPosts = async () => {
-          const res = await axios.get("/posts")
+          const res = await axiosInstance.get("/posts")
           setPosts(res.data)
         }
         fetchPosts()
@@ -30,7 +30,7 @@ export default function TopBar()
         dispatch({
             type: "LOGOUT"
         })
-        window.location.replace('/')
+	 window.location.href = 'https://baluartear.com'
     }
 
     const handleClick = (event) => {
@@ -39,7 +39,14 @@ export default function TopBar()
         content.classList.toggle('is-active')
     }
 
-    const PF = 'http://localhost:8000/images/'
+    const handleClose = (event) => {
+	const content = menu.current
+	const burger = document.getElementById("hamburger")
+	burger.classList.toggle('is-active')
+        content.classList.toggle('is-active')
+    }
+
+    const PF = 'https://api.baluartear.com/images/'
 
 
     window.addEventListener("scroll", () => {
@@ -60,6 +67,7 @@ export default function TopBar()
                 navElement.style.position = "inherit"
                 navElement.style.transform = "translateY(0)"
                 menuMobile.style.transform = "translateY(0px)"
+
                 navElement.style.transition = "all 0.5s"
                 menuMobile.style.top = "30%"
         }
@@ -77,7 +85,7 @@ export default function TopBar()
                 </div>
                 <div className="topRight">
                     <h2 className="top__text">
-                        Union humanista cívica argentina
+                        Union Cívica Humanista Argentina
                     </h2>
                 </div>
             </div>
@@ -104,11 +112,11 @@ export default function TopBar()
                             </Link>
                     </li>
                     <li className="menu__list-item" onClick={handleLogout}>
-                        <a href="." className="menu__list-link">
+                        <a href="https://baluartear.com" className="menu__list-link">
                             {user && 'Salir'}
                         </a>
                     </li>
-                    {user && user.username === 'rafael__admin' ? (
+                    {user && user.username === 'pfalconar' ? (
                         <li className="menu__list-item">
                                 <Link to={"/write"} className="link menu__list-link">
                                     Publicar
@@ -151,7 +159,7 @@ export default function TopBar()
                             </div>
                             <ul className="menu__right-searchitems">
                                 {posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase())).map(post => (
-                                    <Link to={`/post/${post._id}`} key={post._id} onClick={()=>setSearch(false)}>
+                                    <Link to={`/posts/${post._id}`} key={post._id} onClick={()=>setSearch(false)}>
                                         <li className="menu__right-searchitem" key={post._id}>{post.title}</li>
                                     </Link>
                                 )).splice(0, 6)}
@@ -163,22 +171,22 @@ export default function TopBar()
             </div>
             <div className="menu__list-mobile" ref={menu} id="menu__list-mobile">
                 <ul className="menu__list-mobile-ul" id="menu__list-mobile-ul">
-                    <li className="menu__list-mobile-item">
+                    <li className="menu__list-mobile-item" onClick={handleClose}>
                             <Link to={"/"} className="link menu__list-mobile-link">
                                 Inicio
                             </Link>
                     </li>
-                    <li className="menu__list-mobile-item">
+                    <li className="menu__list-mobile-item" onClick={handleClose}>
                             <Link to={"/posts"} className="link menu__list-mobile-link">
                                 Posteos
                             </Link>
                     </li>
-                    <li className="menu__list-mobile-item">
+                    <li className="menu__list-mobile-item" onClick={handleClose}>
                             <Link to={"/about"} className="link menu__list-mobile-link">
                                 Nosotros
                             </Link>
                     </li>
-                    <li className="menu__list-mobile-item">
+                    <li className="menu__list-mobile-item" onClick={handleClose}>
                         <Link to={"/contact"} className="link menu__list-mobile-link">
                             Contactenos
                             </Link>
@@ -189,7 +197,7 @@ export default function TopBar()
                         </a>
                     </li>
                     {user && user.username === 'rafael__admin' ? (
-                        <li className="menu__list-mobile-item">
+                        <li className="menu__list-mobile-item" onClick={handleClose}>
                                 <Link to={"/write"} className="link menu__list-mobile-link">
                                     Publicar
                                 </Link>
@@ -197,12 +205,12 @@ export default function TopBar()
                     ) : null}
                     {!user && (
                         <>
-                        <li className="menu__list-mobile-item">
+                        <li className="menu__list-mobile-item" onClick={handleClose}>
                             <Link to={"/login"} className="link menu__list-mobile-link">
                                 Acceder
                             </Link>
                         </li>
-                        <li className="menu__list-mobile-item">
+                        <li className="menu__list-mobile-item" onClick={handleClose}>
                             <Link to={"/register"} className="link menu__list-mobile-link">
                                 Registrarse
                             </Link>
@@ -214,5 +222,6 @@ export default function TopBar()
         </div>
     )
 }
+
 
 

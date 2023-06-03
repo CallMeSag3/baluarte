@@ -10,7 +10,7 @@ import swal from 'sweetalert'
 export default function Login() {
   const userRef = useRef()
   const passwordRef = useRef()
-  const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+  const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
   const { dispatch, isFetching} = useContext(Context)
 
   const handleSubmit = async (e) => {

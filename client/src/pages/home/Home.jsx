@@ -11,8 +11,7 @@ import { useLocation } from 'react-router-dom'
 export default function Home() {
   const [posts, setPosts] = useState([]) // rendering posts from back
   const {search} = useLocation()
-  const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
-  console.log(search)
+  const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
 
   useEffect(() => {
     const fetchPosts = async () => {

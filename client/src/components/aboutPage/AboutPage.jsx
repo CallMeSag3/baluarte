@@ -32,7 +32,7 @@ export default function AboutPage({posts}) {
       <div className="aboutpage__container">
         <div className="aboutpage__top">
           <h2 className="aboutpage__top-title">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, eveniet?
+            Quienes somos?
           </h2>
           <p className="aboutpage__top-text">
             El nosotros es un espacio para el debate y la reflexión donde la focalización en la realidad,  determinación en la búsqueda y cambio de conciencia cultural y colectiva son el eje de una propuesta que quiere ser diferente, pero no con ello renegar del pasado y del legado de quienes nos han antecedido y puesto los cimientos de este proyecto de ser y constituir una nación libre, soberana y justa.
@@ -114,7 +114,7 @@ export default function AboutPage({posts}) {
       </div>
       <div className="aboutpage__posts">
         <h2 className="aboutpage__posts-title">
-          Nuestro Ultimos Posteos
+          Nuestros Ultimos Posteos
         </h2>
         <div className="aboutpage__posts-cont">
           {posts.slice(-3).map((p) => (

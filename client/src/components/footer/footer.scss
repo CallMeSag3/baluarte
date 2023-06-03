@@ -35,10 +35,10 @@
             padding-left: 25px;
             display: block;
             position: relative;
-            width: 15%;
+            width: 36%;
             &::before {
                 content: '';
-                background: url('../../images/envelope.svg');
+                background: url('../../images/telegram.svg');
                 position: absolute;
                 top: 4.5px;
                 left: 0;
@@ -283,3 +283,48 @@
         }
     }
 }
+
+@media (max-width: 422px) {
+    .footer__first-form-input {
+	width: 65%;
+    }
+}
+
+@media (max-width: 400px){
+    .footer__links-list {
+	flex-direction: column;
+}
+.footer__links-item {
+   margin-bottom: 10px;
+}
+.footer__links-item:last-child {
+   margin-bottom:0px;
+}
+.footer__links-link {
+ margin-left:0;
+}
+.footer {
+height: 390px;
+}
+}
+
+@media (max-width: 375px) {
+    .footer__first-form-input {
+	width: 60%;
+    }
+    .footer {
+	height: 419px;
+    }
+}
+
+@media (max-width: 335px) { 
+    .footer__first-form-input {
+        width: 55%;
+    }
+}
+
+@media (max-width: 312px){
+    .footer {
+height: 462px;
+}
+} 

@@ -232,3 +232,27 @@
         }
     }
 }
+
+@media (max-width: 419px) {
+   .settings__titles {
+	align-items: start;
+	display: flex;
+	margin-bottom: 20px;
+	flex-direction: column;
+    }
+   .settings__delete {
+	margin-top: 20px;
+   }
+}
+
+@media (max-width: 360px) {
+    .settings__form-other-container {
+	flex-direction: column;
+    }
+    .settings__form-mark {
+	margin-bottom: 10px;
+    }
+    .settings__wrapper {
+	padding-right: 0;
+    }
+}

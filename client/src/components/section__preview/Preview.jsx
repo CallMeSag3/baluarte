@@ -15,18 +15,19 @@ export default function Preview() {
                         Sea este un ambito donde la llamada a la reflexión y el cambio sea permanente
                     </p>
                 </li>
-                <li className="preview__list-item">
-                    <img src={Clock} alt="Imagen" className="preview__list-img" />
+           
+		<li className="preview__list-item">
+                    <img src={Arrow} alt="Imagen" className="preview__list-img" />
                     <h2 className="preview__list-title">Sumen Ideas</h2>
                     <p className="preview__list-text">
-                        Quienes se sumen ideas que sirvan al pensamiento y acción politica Argentina
+                        Sumen ideas que sirvan al pensamiento y acción politica argentina en el contexto de la civilización sudamericana
                     </p>
                 </li>
-                <li className="preview__list-item">
-                    <img src={Arrow} alt="Imagen" className="preview__list-img" />
+		<li className="preview__list-item">
+                    <img src={Clock} alt="Imagen" className="preview__list-img" />
                     <h2 className="preview__list-title">Nuestro Sentido</h2>
                     <p className="preview__list-text">
-                        El tiempo es la eternidad que se nos da en cada grano de arena, nuestro sentido
+                        El tiempo es la eternidad que se nos da en cada grano de arena de un proyecto histórico cultural y político irrenunciable
                     </p>
                 </li>
             </ul>

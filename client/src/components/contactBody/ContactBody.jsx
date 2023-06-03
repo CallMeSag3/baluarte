@@ -68,8 +68,8 @@ export default function ContactBody() {
           <br/>
           Vení unite!
           </p>
-          <a href="mailto:pgn2233@gmail.com" className="contactBody__email">
-              pgn2233@gmail.com
+          <a href="https://t.me/gaucho_argentino" className="contactBody__email">
+              @Falconar22
           </a>
           <form action="post" ref={form} onSubmit={sendEmail} className="contactBody__form">
             <div className="contactBody__form-container">

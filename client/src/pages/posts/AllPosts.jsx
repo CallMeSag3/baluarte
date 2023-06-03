@@ -6,11 +6,14 @@ import axios from 'axios'
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]) // rendering posts from back
-  const axiosInstance = axios.create({baseURL:"http://93.188.167.224/api"})
+  const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
+
 
   useEffect(() => {
     const fetchPosts = async () => {
+	console.log("Working")
       const res = await axiosInstance.get("/posts")
+	console.log("ABC")
       setPosts(res.data)
     }
     fetchPosts()

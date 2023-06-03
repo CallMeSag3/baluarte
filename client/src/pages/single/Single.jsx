@@ -6,12 +6,12 @@ import React from 'react'
 
 export default function Single() {
   return (
-    <>
-    <div className='single'>
+    <div className='abc'>
+      <div className='single'>
         <SinglePost/>
         <Sidebar/>
+      </div>
+      <Footer/>
     </div>
-    <Footer/>
-    </>
   )
 }

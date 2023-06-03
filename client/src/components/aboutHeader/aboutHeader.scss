@@ -23,6 +23,7 @@
         bottom: 0;
         transform: translate(-50%, -50%);
         font-weight: bold;
+	text-align: center;
         font-size: 70px;
         line-height: 80px;
         color: #fdfbfb;
@@ -72,12 +73,32 @@
 }
 @media (max-width: 496px) {
     .about__header-title {
-        width: 75%;
+        width: 100%;
         font-size: 50px;
     }
 }
 @media (max-width: 460px) {
     .about__header-title {
-        width: 84%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+    .about__header-title {
+	width: 100%;
+	font-size: 44px;
+    }
+}
+
+@media (max-width: 340px) {
+    .about__header-title {
+        width: 100%;
+        font-size: 40px;
+    }
+}
+@media (max-width: 310px) {
+    .about__header-title {
+        width: 100%;
+        font-size: 36px;
     }
 }
