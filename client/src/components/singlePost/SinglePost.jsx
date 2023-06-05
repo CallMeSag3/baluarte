@@ -145,6 +145,18 @@ export default function SinglePost() {
                 </p>
             ) }
             {updateMode && <button className="editmode__button" onClick={handleUpdate}>Actualizar</button>}
+            {typeof post.links !== 'undefined' && post.links.length > 0 && (
+                <div className="single-post__links">
+                    <h2 className="single-post__links__title">Enlaces: </h2>
+                    {post.links.map(link => (
+                        <div style={{color: "#2e6a9f"}} className="single-post__links__cont" key={link.link + link.name + link._id}>
+                            <a href={link.link} className="single-post__links__link">
+                                {link.name}
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
             <div className="single-post__comments">
                 <h2 className="single-post__comments__title">
                     Escriba su opinion!

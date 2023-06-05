@@ -85,6 +85,78 @@
                 color: #fdfbfb;
             }
         }
+        &-links {
+            margin: 20px 0;
+            &-title {
+                font-size: 25px;
+                line-height: 35px;
+                margin-bottom: 10px;
+                color: #222;
+            }
+            &-btn {
+                background-color: #222;
+                border: 1px solid #222;
+                border-radius: 21px;
+                color: #fdfbfb;
+                width: 160px;
+                font-weight: 500;
+                padding: 5px 9px;
+                cursor: pointer;
+                transition: all 0.7s ease;
+                &:hover {
+                    background-color: #2E6A9F;
+                    color: #fdfbfb;
+                }
+            }
+            &-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            &-name {
+                border: 1px solid #000;
+                border-radius: 21px;
+                padding: 4px 10px 4px 18px;
+                background-color: transparent;
+                width: 25%;
+                margin-right: 20px;
+                height: 40px;
+                &::placeholder {
+                    font-family: "Open Sans", sans-serif;
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 28px;
+                    color: #a1a1a1;
+                }
+            }
+            &-link {
+                border: 1px solid #000;
+                border-radius: 21px;
+                padding: 4px 10px 4px 18px;
+                background-color: transparent;
+                width: 25%;
+                height: 40px;
+                margin-right: 20px;
+                &::placeholder {
+                    font-family: "Open Sans", sans-serif;
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 28px;
+                    color: #a1a1a1;
+                }
+            }
+            &-show {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                &-name {
+                    margin-right: 10px;
+                    border: 1px solid #000;
+                    border-radius: 21px;
+                    padding: 4px 10px 4px 10px;
+                }
+            }
+        }
     }
     &__drop {
         margin-left: 15px;

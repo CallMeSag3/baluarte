@@ -52,6 +52,28 @@ const PostSchema = new mongoose.Schema(
       required: false,
       type: Array,
     },
+    links: {
+      link: {
+        type: String,
+        required: false,
+        unique: false,
+      },
+      name: {
+        type: String,
+        required: false,
+        unique: false,
+      },
+      required: false,
+      type: Array,
+    },
+    photos: {
+      photo: {
+        type: String,
+        required: false,
+      },
+      required: false,
+      type: Array,
+    },
   },
   { timestamps: true }
 );

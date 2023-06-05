@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useRef } from 'react'
 import './write.scss'
 import FileAdd from '../../images/file_add.svg'
 import Footer from '../../components/footer/Footer'
@@ -13,6 +13,11 @@ export default function Write() {
     const [catPost, setCatPost] = useState([])
     const [file, setFile] = useState(null)
     const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
+
+    const [toggle, setToggle] = useState(false)
+    const [links, setLinks] = useState([])
+    const inputRef = useRef();
+    const selectRef = useRef();
 
 
     const handleCheck = (selectedOption) => {
@@ -44,6 +49,7 @@ export default function Write() {
             title,
             desc,
             categories: catPost,
+            links,
         }
         if(file) {
             const data = new FormData()
@@ -78,6 +84,23 @@ export default function Write() {
         }
     }
 
+    const addBtnClick = (e) => {
+        e.preventDefault();
+        setToggle(true);
+      };
+
+      const handleAddField = (e) => {
+        e.preventDefault();
+        const linksAdd = [...links];
+        linksAdd.push({
+          name: inputRef.current.value,
+          link: selectRef.current.value,
+        });
+        setLinks(linksAdd);
+        setToggle(false);
+      };
+
+
   return (
     <>
     <div className='write'>
@@ -96,6 +119,29 @@ export default function Write() {
             </div>
             <div className="write__form-container">
                 <textarea className='write__form-textarea' placeholder='Escriba el texto a publicar..' type="text" onChange={e=>setDesc(e.target.value)} required={true}></textarea>
+            </div>
+
+            <div className="write__form-links">
+                <h2 className="write__form-links-title">Enlaces de la pagina</h2>
+                {links && links.size !== 0 && (
+                    links.map(link => (
+                        <div className="write__form-links-show">
+                            <p className="write__form-links-show-name">{link.name}</p>
+                            <p className="write__form-links-show-name">{link.link}</p>
+                        </div>
+                    ))
+                )}
+
+                {!toggle ? (
+                    <button className="write__form-links-btn" onClick={addBtnClick}>Agregar mas links</button>
+                )
+                : (
+                    <div className="write__form-links-container">
+                        <input type="text" placeholder='Nombre..' ref={inputRef} className="write__form-links-name" />
+                        <input type="text" placeholder='Link..' ref={selectRef} className="write__form-links-link" />
+                        <button className="write__form-links-btn" onClick={handleAddField}>Agregar</button>
+                    </div>
+                )}
             </div>
             <button className="write__form-button" type="submit">Publicar</button>
         </form>
