@@ -157,6 +157,21 @@ export default function SinglePost() {
                     ))}
                 </div>
             )}
+            {typeof post.photos !== 'undefined' && post.photos.length > 0 && (
+                <div className="single-post__photos" style={{marginLeft:"10px"}}>
+                    <h2 className="single-post__links__title">Fotos del articulo: </h2>
+                    <div className="single-post__photos__conts">
+                    {post.photos.map(photo => (
+                        <div className="single-post__photos__cont" key={photo._id + photo.desc}>
+                            <img src={PF + photo.photo} alt="Foto" className="single-post__photos__img" />
+                            <p className="single-post__photos__desc">
+                                {photo.desc}
+                            </p>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+            )}
             <div className="single-post__comments">
                 <h2 className="single-post__comments__title">
                     Escriba su opinion!

@@ -157,6 +157,39 @@
                 }
             }
         }
+        &-images {
+            margin: 20px 0;
+            padding: 10px 0;
+            &-title {
+                font-size: 25px;
+                line-height: 35px;
+                margin-bottom: 10px;
+                color: #222;
+            }
+            &-show {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                flex-direction: column;
+            }
+            &-img {
+                width: 46%;
+                height: 290px;
+                border-radius: 10px;
+                object-fit: scale-down;
+            }
+            &-describtion {
+                font-size: 17px;
+                line-height: 27px;
+            }
+            &-add {
+                margin: 20px 0;
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start
+            }
+        }
     }
     &__drop {
         margin-left: 15px;

@@ -19,6 +19,12 @@ export default function Write() {
     const inputRef = useRef();
     const selectRef = useRef();
 
+    const [images, setImages] = useState([])
+    const [img, setImg] = useState(null)
+    const [toggleImages, setToggleImages] = useState(false)
+    const imgRef = useRef();
+    const PF = 'https://api.baluartear.com/images/'
+
 
     const handleCheck = (selectedOption) => {
         setCatPost(selectedOption.map(o => (
@@ -50,6 +56,7 @@ export default function Write() {
             desc,
             categories: catPost,
             links,
+            images,
         }
         if(file) {
             const data = new FormData()
@@ -100,6 +107,45 @@ export default function Write() {
         setToggle(false);
       };
 
+      const addBtnClickImg = (e) => {
+        e.preventDefault();
+        setToggleImages(true);
+      };
+
+      const handleImgField = async (e) => {
+        e.preventDefault();
+        console.log(imgRef.current.value)
+        const imagesAdd = [...images];
+        let imageURL = null;
+        if(img) {
+            const data = new FormData()
+            const filename = Date.now() + img.name
+            data.append("name",filename)
+            data.append("file",img)
+            imageURL = filename
+            try{
+                await axiosInstance.post("/upload", data)
+            } catch (err) {
+                swal ({
+                    title: "Oops!",
+                    text: "Intente nuevamente!" ,
+                    icon: "error",
+                    button: "OK",
+                    dangerMode:true,
+                  })
+            }
+        }
+        imagesAdd.push({
+            photo: imageURL,
+            desc: imgRef.current.value,
+        });
+        console.log(imageURL)
+        setImages(imagesAdd);
+        setToggleImages(false);
+        setImg(null);
+        };
+
+
 
   return (
     <>
@@ -140,6 +186,36 @@ export default function Write() {
                         <input type="text" placeholder='Nombre..' ref={inputRef} className="write__form-links-name" />
                         <input type="text" placeholder='Link..' ref={selectRef} className="write__form-links-link" />
                         <button className="write__form-links-btn" onClick={handleAddField}>Agregar</button>
+                    </div>
+                )}
+            </div>
+            <div className="write__form-images">
+                <h2 className="write__form-images-title">Imagenes Adicionales</h2>
+                {images.length !== 0 && (
+                    images.map(image => (
+                        <div className="write__form-images-show">
+                            <img src={PF + image.photo} alt="Imagen" className="write__form-images-img" />
+                            <p className="write__form-images-describtion">
+                                {image.desc}
+                            </p>
+                        </div>
+                    ))
+                )}
+
+                {img && (
+                    <img src={URL.createObjectURL(img)} alt="Imagen" className="write__form-images-img" />
+                )}
+
+                {!toggleImages ? (
+                    <button style={{width:"200px"}} className="write__form-links-btn" onClick={addBtnClickImg}>Agregar mas imagenes</button>
+                ) : (
+                    <div className="write__form-images-add">
+                        <label htmlFor="imgInput" className="write__form-label">
+                            <img style={{marginBottom: "10px"}} src={FileAdd} alt="Agregar Imagen" className="write__form-icon" />
+                        </label>
+                        <input type="file" id="imgInput" style={{display: "none"}} className="write__form-file" onChange={e => setImg(e.target.files[0])}  />
+                        <input type="text" placeholder='Descripcion..' ref={imgRef} className="write__form-links-link" style={{marginLeft: "10px"}} />
+                        <button className="write__form-links-btn" style={{marginLeft: "20px"}} onClick={handleImgField}>Agregar</button>
                     </div>
                 )}
             </div>

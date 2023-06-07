@@ -71,6 +71,10 @@ const PostSchema = new mongoose.Schema(
         type: String,
         required: false,
       },
+      desc: {
+        type: String,
+        required: false,
+      },
       required: false,
       type: Array,
     },
