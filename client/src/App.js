@@ -24,12 +24,7 @@ function App() {
           path="/register"
           element={user ? <Home /> : <Register />}
         ></Route>
-        <Route
-          path="/write"
-          element={
-            user && user.username === "pfalconar" ? <Write /> : <Home />
-          }
-        />
+        <Route path="/write" element={user ? <Write /> : <Home />} />
         <Route path="/login" element={user ? <Home /> : <Login />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>

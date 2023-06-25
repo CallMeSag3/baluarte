@@ -21,7 +21,7 @@ const PostSchema = new mongoose.Schema(
     },
     username: {
       type: String,
-      required: false,
+      required: true,
     },
     comments: {
       username: {

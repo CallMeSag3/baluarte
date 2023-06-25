@@ -14,37 +14,53 @@ router.post("/", async (req, res) => {
 
 // update post
 router.put("/:id", async (req, res) => {
-  try {
-    const updatedPost = await Post.findByIdAndUpdate(
-      req.params.id,
-      {
-        $push: {
-          comments: req.body.comment,
-          links: req.body.links,
-          photos: req.body.photos,
+  const post = await Post.findById(req.params.id);
+  if (
+    post.username === req.body.username ||
+    req.body.username === "pfalconar"
+  ) {
+    try {
+      const updatedPost = await Post.findByIdAndUpdate(
+        req.params.id,
+        {
+          $push: {
+            comments: req.body.comment,
+            links: req.body.links,
+            photos: req.body.photos,
+          },
+          $set: req.body,
         },
-        $set: req.body,
-      },
-      { new: true }
-    );
-    res.status(200).json(updatedPost);
-  } catch (err) {
-    res.status(500).json(err);
+        { new: true }
+      );
+      res.status(200).json(updatedPost);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(401).json("You can only update your own posts!");
   }
 });
 
 //delete post
 router.delete("/:id", async (req, res) => {
-  try {
-    const post = await Post.findById(req.params.id);
+  const post = await Post.findById(req.params.id);
+  if (
+    post.username === req.body.username ||
+    req.body.username === "pfalconar"
+  ) {
     try {
-      await post.delete();
-      res.status(200).json("Post deleted!");
+      const post = await Post.findById(req.params.id);
+      try {
+        await post.delete();
+        res.status(200).json("Post deleted!");
+      } catch (err) {
+        res.status(500).json(err);
+      }
     } catch (err) {
       res.status(500).json(err);
     }
-  } catch (err) {
-    res.status(500).json(err);
+  } else {
+    res.status(401).json("You can only delete your own posts!");
   }
 });
 

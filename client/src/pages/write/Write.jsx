@@ -7,6 +7,7 @@ import swal from 'sweetalert'
 import AsyncSelect from 'react-select/async'
 
 export default function Write() {
+    const {user} = useContext(Context)
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
     const [cats, setCats] = useState([])
@@ -53,6 +54,7 @@ export default function Write() {
         e.preventDefault()
         const newPost = {
             title,
+            username: user.username,
             desc,
             categories: catPost,
             links,

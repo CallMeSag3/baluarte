@@ -116,7 +116,7 @@ export default function TopBar()
                             {user && 'Salir'}
                         </a>
                     </li>
-                    {user && user.username === 'pfalconar' ? (
+                    {user ? (
                         <li className="menu__list-item">
                                 <Link to={"/write"} className="link menu__list-link">
                                     Publicar
@@ -196,7 +196,7 @@ export default function TopBar()
                             {user && 'Salir'}
                         </a>
                     </li>
-                    {user && user.username === 'rafael__admin' ? (
+                    {user && user.username === 'pfalconar' ? (
                         <li className="menu__list-mobile-item" onClick={handleClose}>
                                 <Link to={"/write"} className="link menu__list-mobile-link">
                                     Publicar

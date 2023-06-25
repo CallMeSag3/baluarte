@@ -72,7 +72,7 @@ export default function SinglePost() {
 
     const handleDelete = async () => {
         try {
-            await axiosInstance.delete("/posts/" + path, {data:{userId: user._id}})
+            await axiosInstance.delete("/posts/" + path, {data:{username: user.username}})
             window.location.replace("/")
         } catch (err) {
             console.log(err)
@@ -83,7 +83,8 @@ export default function SinglePost() {
         const updatedPost = {
             userId: user._id,
             title,
-            desc
+            desc,
+            username: user.username,
         }
         if(file) {
             const data = new FormData()
@@ -112,7 +113,7 @@ export default function SinglePost() {
             {updateMode ? <input type="text" value={title} className="editmode__title-input" autoFocus onChange={(e)=>setTitle(e.target.value)}></input> : (
                 <div className="single-post__head">
                     <h1 className="single-post__title">{title}</h1>
-                    {user?.username === 'pfalconar' &&(
+                    {(user?.username === post.username || user?.username === "pfalconar") && (
                     <div className='single-post__edits'>
                         <span className='single-post__edit' style={{color:"green", cursor:"pointer"}} onClick={()=>setUpdateMode(true)}>Editar</span>
                         <span className='single-post__edit' style={{color:"tomato", cursor:"pointer"}} onClick={handleDelete}>Eliminar</span>
@@ -132,7 +133,7 @@ export default function SinglePost() {
             )}
             <div className="single-post__info">
                 <span className="single-post__author">
-                    Autor: <b>RAPA</b>
+                    Autor: <b>{post.username}</b>
                 </span>
 
                 <span className="single-post__date">
@@ -140,7 +141,7 @@ export default function SinglePost() {
                 </span>
             </div>
             {updateMode ? <textarea type="text" value={desc} className="editmode__text-input" onChange={(e)=>setDesc(e.target.value)}></textarea> : (
-                <p className="single-post__text">
+                <p className="single-post__text" onCopy={(e)=>{e.preventDefault();e.nativeEvent.stopImmediatePropagation()}} onCut={(e)=>{e.preventDefault();e.nativeEvent.stopImmediatePropagation()}}>
                     {desc}
                 </p>
             ) }

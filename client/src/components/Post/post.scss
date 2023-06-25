@@ -4,10 +4,10 @@
     transition: all 0.7s ease;
     &:hover {
         transform: translateY(-20px);
-	.post__img {
-		width: 110%;
-		height: 260px;
-	}
+	    .post__img {
+		    width: 110%;
+		    height: 260px;
+	    }
     }
     &__img {
 	transition: all 0.7s ease;
