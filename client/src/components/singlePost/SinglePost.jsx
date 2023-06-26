@@ -9,13 +9,13 @@ import { useContext } from 'react'
 import {Context} from '../../context/Context'
 import swal from 'sweetalert'
 import Person from '../../images/icooon.jpeg'
+import slugify from 'slugify'
 
 
 
 // edit only for admins
 export default function SinglePost() {
-    const location = useLocation()
-    const path = location.pathname.split("/")[2]
+    const path = useLocation().pathname.split("/")[2]
     const [post, setPost] = useState({})
     const PF = 'https://api.baluartear.com/images/'
     const [title, setTitle] = useState("")
@@ -99,6 +99,7 @@ export default function SinglePost() {
         try {
             await axiosInstance.put("/posts/" + path, updatedPost)
             setUpdateMode(false)
+            window.location.replace("/posts/" + slugify(title))
         } catch (err) {
             console.log(err)
         }

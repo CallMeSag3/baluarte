@@ -33,7 +33,8 @@ function App() {
           path="/settings"
           element={user ? <Settings /> : <Register />}
         ></Route>
-        <Route path="/posts/:id" element={<Single />}></Route>
+        {/* <Route path="/posts/:id" element={<Single />}></Route> */}
+        <Route path="/posts/:title" element={<Single />}></Route>
       </Routes>
     </Router>
   );

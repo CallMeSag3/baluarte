@@ -1,6 +1,12 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
 
+const decode = (title) => {
+  const decodedURL = decodeURIComponent(title);
+  const decodedTitle = decodedURL.replace(/-/g, " ");
+  return decodedTitle;
+};
+
 // create post
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
@@ -13,15 +19,19 @@ router.post("/", async (req, res) => {
 });
 
 // update post
-router.put("/:id", async (req, res) => {
-  const post = await Post.findById(req.params.id);
+// router.put("/:id", async (req, res) => {
+router.put("/:title", async (req, res) => {
+  // const post = await Post.findById(req.params.id);
+  const decodedTitle = decode(req.params.title);
+  const post = await Post.find({ title: decodedTitle });
   if (
     post.username === req.body.username ||
     req.body.username === "pfalconar"
   ) {
     try {
-      const updatedPost = await Post.findByIdAndUpdate(
-        req.params.id,
+      // const updatedPost = await Post.findByIdAndUpdate(
+      const updatedPost = await Post.findOneAndUpdate(
+        { title: decodedTitle },
         {
           $push: {
             comments: req.body.comment,
@@ -42,14 +52,17 @@ router.put("/:id", async (req, res) => {
 });
 
 //delete post
-router.delete("/:id", async (req, res) => {
-  const post = await Post.findById(req.params.id);
+// router.delete("/:id", async (req, res) => {
+router.delete("/:title", async (req, res) => {
+  // const post = await Post.findById(req.params.id);
+  const decodedTitle = decode(req.params.title);
+  const post = await Post.findOne({ title: decodedTitle });
   if (
     post.username === req.body.username ||
     req.body.username === "pfalconar"
   ) {
     try {
-      const post = await Post.findById(req.params.id);
+      const post = await Post.findOne({ title: decodedTitle });
       try {
         await post.delete();
         res.status(200).json("Post deleted!");
@@ -65,9 +78,12 @@ router.delete("/:id", async (req, res) => {
 });
 
 // get post
-router.get("/:id", async (req, res) => {
+// router.get("/:id", async (req, res) => {
+router.get("/:title", async (req, res) => {
+  const decodedTitle = decode(req.params.title);
   try {
-    const post = await Post.findById(req.params.id);
+    // const post = await Post.findById(req.params.id);
+    const post = await Post.findOne({ title: decodedTitle });
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);

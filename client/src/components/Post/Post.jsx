@@ -1,10 +1,11 @@
 import React from 'react'
 import "./post.scss"
 import {Link} from 'react-router-dom'
+import slugify from 'slugify'
 
 export default function Post({post}) {
   const PF = 'https://api.baluartear.com/images/'
-  console.log(post._id)
+  const slug = slugify(post.title)
   return (
     <div className="post">
       {post.photo && (
@@ -16,7 +17,8 @@ export default function Post({post}) {
             <span className="post__cat" key={post._id}>{c}</span>
           ))}
         </div>
-        <Link to={`/posts/${post._id}`} className="post__title">
+        {/* <Link to={`/posts/${post._id}`} className="post__title"> */}
+        <Link to={`/posts/${slug}`} className="post__title">
           <h3 className="post__title">{post.title}</h3>
         </Link>
         <hr/>
