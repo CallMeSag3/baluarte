@@ -3,8 +3,40 @@ const Post = require("../models/Post");
 
 const decode = (title) => {
   const decodedURL = decodeURIComponent(title);
-  const decodedTitle = decodedURL.replace(/-/g, " ");
+  const decodedTitle = decodedURL.replace(
+    /-|_co_|_qu_|_ex_|_mo_|_ba_|_pu_|_pa_|_pc_|_quu_|_exx_|_nn_|_NN_|_aa_|_ee_|_ii_|_oo_|_uu_|_AA_|_EE_|_II_|_OO_|_UU_/g,
+    function (matched) {
+      return mapObj[matched];
+    }
+  );
   return decodedTitle;
+};
+
+var mapObj = {
+  _co_: ",",
+  _qu_: "?",
+  _do_: ".",
+  _ex_: "!",
+  _mo_: ":",
+  _ba_: "/",
+  _pu_: ";",
+  _pa_: "(",
+  _pc_: ")",
+  _quu_: "¿",
+  _exx_: "¡",
+  _nn_: "ñ",
+  _NN_: "Ñ",
+  _aa_: "á",
+  _ee_: "é",
+  _ii_: "í",
+  _oo_: "ó",
+  _uu_: "ú",
+  _AA_: "Á",
+  _EE_: "É",
+  _II_: "Í",
+  _OO_: "Ó",
+  _UU_: "Ú",
+  "-": " ",
 };
 
 // create post

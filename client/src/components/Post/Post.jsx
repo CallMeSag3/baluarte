@@ -5,7 +5,34 @@ import slugify from 'slugify'
 
 export default function Post({post}) {
   const PF = 'https://api.baluartear.com/images/'
+
+  slugify.extend({
+    ",": "_co_",
+    "?": "_qu_",
+    ".": "_do_",
+    "!": "_ex_",
+    ":": "_mo_",
+    "/": "_ba_",
+    ";": "_pu_",
+    "(": "_pa_",
+    ")": "_pc_",
+    "¿": "_quu_",
+    "¡": "_exx_",
+    "ñ": "_nn_",
+    "Ñ": "_NN_",
+    "á": "_aa_",
+    "é": "_ee_",
+    "í": "_ii_",
+    "ó": "_oo_",
+    "ú": "_uu_",
+    "Á": "_AA_",
+    "É": "_EE_",
+    "Í": "_II_",
+    "Ó": "_OO_",
+    "Ú": "_UU_",
+  })
   const slug = slugify(post.title)
+
   return (
     <div className="post">
       {post.photo && (
