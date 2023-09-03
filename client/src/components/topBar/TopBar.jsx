@@ -10,6 +10,8 @@ import { Context } from '../../context/Context';
 import { useRef } from 'react';
 import axios from 'axios'
 
+import slugify from 'slugify';
+
 export default function TopBar()
 {
     const {user, dispatch} = useContext(Context)
@@ -18,6 +20,33 @@ export default function TopBar()
     const [query, setQuery] = useState('')
     const menu = useRef()
     const axiosInstance = axios.create({baseURL:"https://api.baluartear.com/api/"})
+
+    slugify.extend({
+        ",": "_co_",
+        "?": "_qu_",
+        ".": "_do_",
+        "!": "_ex_",
+        ":": "_mo_",
+        "/": "_ba_",
+        ";": "_pu_",
+        "(": "_pa_",
+        ")": "_pc_",
+        "¿": "_quu_",
+        "¡": "_exx_",
+        "ñ": "_nn_",
+        "Ñ": "_NN_",
+        "á": "_aa_",
+        "é": "_ee_",
+        "í": "_ii_",
+        "ó": "_oo_",
+        "ú": "_uu_",
+        "Á": "_AA_",
+        "É": "_EE_",
+        "Í": "_II_",
+        "Ó": "_OO_",
+        "Ú": "_UU_",
+      })
+
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axiosInstance.get("/posts")
@@ -159,7 +188,7 @@ export default function TopBar()
                             </div>
                             <ul className="menu__right-searchitems">
                                 {posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase())).map(post => (
-                                    <Link to={`/posts/${post._id}`} key={post._id} onClick={()=>setSearch(false)}>
+                                    <Link to={`/posts/${slugify(post.title)}`} key={post._id} onClick={()=>setSearch(false)}>
                                         <li className="menu__right-searchitem" key={post._id}>{post.title}</li>
                                     </Link>
                                 )).splice(0, 6)}
