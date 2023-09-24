@@ -78,6 +78,20 @@ router.put("/:title", async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
+  } else if (req.body.comment != null) {
+    try {
+      const updatedPost = await Post.findOneAndUpdate(
+        { title: decodedTitle },
+        {
+          $push: {
+            comments: req.body.comment,
+          },
+        }
+      );
+      res.status(200).json(updatedPost);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   } else {
     res.status(401).json("You can only update your own posts!");
   }
